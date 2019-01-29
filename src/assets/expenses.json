@@ -1,0 +1,57 @@
+[
+    {
+          "expId": 1,
+          "submitDate": "2019-01-17",
+          "transDate": "2019-01-15",
+          "empId": 12,
+          "expType": 1,
+          "amount": 122.22,
+          "merchant": "Hampton Inn",
+          "status": 1,
+          "resolveDate": null
+    },
+    {
+        "expId": 2,
+        "submitDate": "2019-01-16",
+        "transDate": "2019-01-14",
+        "empId": 11,
+        "expType": 2,
+        "amount": 65.23,
+        "merchant": "Avis Rental Cars",
+        "status": 2,
+        "resolveDate": "2019-01-18"
+    },
+    {
+        "expId": 3,
+        "submitDate": "2019-01-13",
+        "transDate": "2019-01-10",
+        "empId": 12,
+        "expType": 3,
+        "amount": 15.77,
+        "merchant": "Panera Bread",
+        "status": 3,
+        "resolveDate": "2019-01-15"
+    },
+    {
+        "expId": 4,
+        "submitDate": "2019-01-10",
+        "transDate": "2019-01-05",
+        "empId": 11,
+        "expType": 2,
+        "amount": 200.10,
+        "merchant": "American Airlines",
+        "status": 2,
+        "resolveDate": "2019-01-11"
+    },
+    {
+        "expId": 5,
+        "submitDate": "2019-01-05",
+        "transDate": "2019-01-03",
+        "empId": 11,
+        "expType": 1,
+        "amount": 355.88,
+        "merchant": "Expedia",
+        "status": 1,
+        "resolveDate": null
+    }
+]

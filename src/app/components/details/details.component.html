@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<h4 class="mb-3">Reimbursement Request Details</h4>
+<div *ngIf="expense">
+  <p>Expense ID: {{ expense.expId }}</p>
+  <p>Employee ID: {{ expense.empId }}</p>
+  <p>Date Submitted: {{ expense.submitDate }}</p>
+  <p>Transaction Date: {{ expense.transDate }}</p>
+  <p>Expense Amount: ${{ expense.amount }}</p>
+  <p>Expense Type: {{ expense.expType }}</p>
+  <p>Merchant Name: {{expense.merchant }}</p>
+  <p>Reimbursement Status: {{ expense.status }}</p>
+  <p>Date Resolved: {{ expense.resolveDate }}</p>
+</div>
+<div *ngIf="!expense">
+  No expense found
+</div>
+<div class="row">
+  <button type="submit" class="btn btn-success mx-auto mx-sm-0" [hidden]="expense.status==2 || expense.status==3" [routerLink]="['/success-page']" routerLinkActive="router-link-active" >Approve Reimbursement</button>
+  <button type="submit" class="btn btn-danger mx-auto mx-sm-3" [hidden]="expense.status==2 || expense.status==3" [routerLink]="['/success-page']" routerLinkActive="router-link-active" >Deny Reimbursement</button>
+  <button type="button" class="btn btn-primary mx-auto mx-sm-0" [hidden]="expense.status==1" [routerLink]="['/mgr-home']" routerLinkActive="router-link-active">Return to All Requests</button>
+  <button type="button" class="btn btn-primary mx-auto mx-sm-0" [hidden]="expense.status==2 || expense.status==3" [routerLink]="['/mgr-home']" routerLinkActive="router-link-active">Cancel</button>
+</div>
+

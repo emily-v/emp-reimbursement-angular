@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-8">
+    <h4>Reimbursement Requests</h4>
+  </div>
+  <div class="col text-right">
+    <app-filter-button (changed)="filter($event)"></app-filter-button>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" (click)="sort('expId')">Request ID</th>
+          <th scope="col" (click)="sort('submitDate')">Date Submitted</th>
+          <th scope="col" (click)="sort('transDate')">Transaction Date</th>
+          <th scope="col" (click)="sort('empId')">Employee ID</th>
+          <th scope="col" (click)="sort('expType')">Expense Type</th>
+          <th scope="col" (click)="sort('amount')">Amount</th>
+          <th scope="col" (click)="sort('status')">Status</th>
+          <th scope="col" (click)="sort('resolveDate')">Date Resolved</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exp of filteredExpenses">
+          <td>{{ exp.expId }}</td>
+          <td>{{ exp.submitDate }}</td>
+          <td>{{ exp.transDate }}</td>
+          <td>{{ exp.empId }}</td>
+          <td>{{ exp.expType }}</td>
+          <td>${{ exp.amount }}</td>
+          <td>{{ exp.status }}</td>
+          <td>{{ exp.resolveDate }}</td>
+          <td>
+            <button [hidden]="exp.status==1" [routerLink]="['/details', exp.expId]" type="button" class="btn btn-secondary">Review</button>
+            <button [hidden]="exp.status==2 || exp.status==3" [routerLink]="['/details', exp.expId]" type="button" class="btn btn-info">Resolve</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
